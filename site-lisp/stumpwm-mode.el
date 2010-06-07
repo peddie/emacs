@@ -1,0 +1,1 @@
+/home/peddie/software/stumpwm/contrib/stumpwm-mode.el
