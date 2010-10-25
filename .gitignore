@@ -3,3 +3,4 @@ backups/*
 auto-save-list/*
 semanticdb/*
 tramp
+ede-projects.el
