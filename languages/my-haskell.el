@@ -2,31 +2,61 @@
 
 ;; Haskell
 ; (add-to-list 'load-path "/home/peddie/.emacs.d/site-lisp/haskell-mode")
-(add-to-list 'load-path "/home/peddie/software/haskellmode-emacs")
-(add-hook 'haskell-mode-hook 'turn-on-haskell-ghci)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-to-list 'load-path "/home/peddie/software/haskell/haskellmode-emacs")
+(add-to-list 'load-path "/home/peddie/software/haskell/ghc-mod/elisp")
 (autoload 'inf-haskell "inf-haskell" "inferior haskell process")
+
 (require 'haskell-mode)
 (require 'inf-haskell)
 (require 'my-flymake)
 
-(add-hook 'haskell-mode-hook 'flymake-mode)
+(autoload 'ghc-init "ghc" nil t)
 
 (setq auto-mode-alist
       (append '(("\\.hs$" . haskell-mode)
-		("\\.lhs$" . haskell-mode)) auto-mode-alist))
+		("\\.lhs$" . literate-haskell-mode)) auto-mode-alist))
+
+(require 'thingatpt)
+(require 'thingatpt+)
+
+(defun rgr/hayoo()
+ (interactive)
+ (let* ((default (region-or-word-at-point))
+	(term (read-string (format "Hayoo for the following phrase (%s): "
+                                   default))))
+   (let ((term (if (zerop(length term)) default term)))
+     (browse-url (format "http://holumbus.fh-wedel.de/hayoo/hayoo.html?query=%s&start" term)))))
+
+(defun haskell-keys-setup (mode-map)
+  (define-key mode-map (kbd "C-c C-m") 'haskell-indent-put-region-in-literate)
+  (define-key mode-map (kbd "C-c C-=") 'haskell-indent-insert-equal)
+  (define-key mode-map (kbd "C-c C-|") 'haskell-indent-insert-guard)
+  (define-key mode-map (kbd "C-c C-o") 'haskell-indent-insert-otherwise)
+  (define-key mode-map (kbd "C-c C-.") 'haskell-indent-align-guards-and-rhs)
+  ;; run a hayoo search
+  (define-key mode-map (kbd "C-c C-s") 'rgr/hayoo)
+  (define-key mode-map (kbd "C-c C-w") 'haskell-indent-insert-where))
+
+(haskell-keys-setup haskell-mode-map)
+(haskell-keys-setup literate-haskell-mode-map)
+
+(defun haskell-init-hook ()
+  (ghc-init) 
+  (setq haskell-font-lock-symbols 'unicode)
+  (if (not (null buffer-file-name)) 
+      (flymake-mode)))
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-ghci)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'haskell-init-hook)
+
+(add-hook 'literate-haskell-mode-hook 'turn-on-haskell-ghci)
+(add-hook 'literate-haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'literate-haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'literate-haskell-mode-hook 'haskell-init-hook)
 
 (setq haskell-program-name "ghci")
-;; (defun rgr/hayoo()  
-;;   (interactive)
-;;   (let* ((default (region-or-word-at-point))
-;; 	 (term (read-string (format "Hayoo for the following phrase (%s): "
-;; 				    default))))
-;;     (let ((term (if (zerop(length term)) default term)))
-;;       (browse-url (format "http://holumbus.fh-wedel.de/hayoo/results/hayoo.html?query=%s&start" term)))))
-
-; (define-key haskell-mode-map (kbd "<f3>") (lambda()(interactive)(rgr/hayoo))) 
 
 (add-hook 'haskell-mode-hook 'my-mmm-mode)
 

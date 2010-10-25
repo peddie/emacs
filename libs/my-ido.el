@@ -16,7 +16,7 @@
  ido-max-work-file-list      50 ; remember many
  ido-use-filename-at-point nil ; don't use filename at point (annoying)
  ido-use-url-at-point nil ; don't use url at point (annoying)
- ido-enable-flex-matching nil ; don't try to be too smart
+ ido-enable-flex-matching t ; don't try to be too smart
  ido-max-prospects 10 ; don't spam my minibuffer
  ido-confirm-unique-completion t) ; wait for RET, even with unique completion
 

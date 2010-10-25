@@ -18,6 +18,7 @@
 (autoload 'egg-grep "egg-grep" "Enhanced emacs git interface -- grep" t)
 
 ; magit
-(autoload 'magit "magit" "Enhanced emacs git interface" t)
-
+(require 'magit)
 (global-set-key (kbd "C-c s") 'magit-status)
+
+(provide 'my-git)

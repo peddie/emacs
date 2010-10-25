@@ -1,1 +1,5 @@
 *.elc
+backups/*
+auto-save-list/*
+semanticdb/*
+tramp

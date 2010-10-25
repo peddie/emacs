@@ -4,11 +4,12 @@
 
 ; SLIME
 
-(add-to-list 'load-path "/home/peddie/software/lisp/slime-cvs")
-(add-to-list 'load-path "/home/peddie/software/lisp/slime-cvs/contrib")
+(add-to-list 'load-path "/home/peddie/software/lisp/slime")
+(add-to-list 'load-path "/home/peddie/.emacs.d/site-lisp/redshank")
+(add-to-list 'load-path "/home/peddie/software/lisp/slime/contrib")
 (require 'slime)
 
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(setq inferior-lisp-program "sbcl")
 (add-to-list 'auto-mode-alist '("\\.lisp$" . lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.cl$" . lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.asd$" . lisp-mode))
@@ -16,7 +17,7 @@
 (slime-setup '(slime-fancy slime-asdf slime-fuzzy slime-tramp slime-presentations))
 ; slime-fuzzy slows everything down
 
-(setq slime-backend "/home/peddie/software/lisp/slime-cvs/swank-loader.lisp")
+(setq slime-backend "/home/peddie/software/lisp/slime/swank-loader.lisp")
 (eval-after-load "slime"
  '(progn
     (setq common-lisp-hyperspec-root "file:///usr/share/doc/hyperspec")
@@ -28,7 +29,6 @@
           slime-when-complete-filename-expand t
           slime-truncate-lines nil
           slime-autodoc-use-multiline-p t)
-    ;(slime-setup '(slime-fancy slime-asdf slime-fuzzy))
     (define-key slime-repl-mode-map (kbd "C-c ;")
       'slime-insert-balanced-comments)
     (define-key slime-repl-mode-map (kbd "C-c M-;")
@@ -37,7 +37,9 @@
       'slime-insert-balanced-comments)
     (define-key slime-mode-map (kbd "C-c M-;")
       'slime-remove-balanced-comments)
-    (define-key slime-mode-map (kbd "RET") 'newline-and-indent)
+    (define-key slime-mode-map (kbd "C-c C-q") 
+      'slime-close-all-parens-in-sexp)
+     (define-key slime-mode-map (kbd "RET") 'newline-and-indent)
     (define-key slime-mode-map (kbd "C-j") 'newline)
     (define-key slime-mode-map [C-tab] 'slime-selector)))
 (add-hook 'lisp-mode-hook (lambda ()

@@ -9,7 +9,10 @@
  '(progn
     (define-key paredit-mode-map (read-kbd-macro "C-j") nil)))
 
-(show-paren-mode)
+(setq slime-lisp-implementations
+   '((sbcl ("/usr/local/bin/sbcl"))
+     (abcl ("/usr/local/bin/abcl"))
+     (clojure ("/home/peddie/bin/clojure") :init swank-clojure-init)))
 
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit-mode)
 (add-hook 'lisp-mode-hook 'turn-on-paredit-mode)
@@ -17,8 +20,15 @@
 (add-hook 'scheme-mode-hook 'turn-on-paredit-mode)
 (add-hook 'clojure-mode-hook 'turn-on-paredit-mode)
 
+(add-hook 'emacs-lisp-mode-hook '(lambda () (show-paren-mode t)))
+(add-hook 'lisp-mode-hook '(lambda () (show-paren-mode t)))
+(add-hook 'lisp-interaction-mode-hook '(lambda () (show-paren-mode t)))
+(add-hook 'scheme-mode-hook '(lambda () (show-paren-mode t)))
+(add-hook 'clojure-mode-hook '(lambda () (show-paren-mode t)))
+
 (require 'electric-dot-and-dash)
 (global-set-key "h" 'electric-dot-and-dash-dot)
 (global-set-key "j" 'electric-dot-and-dash-dash)
 
 (provide 'my-lisps)
+

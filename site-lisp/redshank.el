@@ -1,1 +1,0 @@
-/home/peddie/software/redshank/redshank.el

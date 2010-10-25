@@ -27,3 +27,10 @@
 
 (global-set-key "\C-c\C-p" 'ps-print-buffer-with-faces)
 ; (global-set-key "\C-xm" 'browse-url-at-point)
+
+; time for some macro-trons
+(global-set-key [f10]  'start-kbd-macro)
+(global-set-key [f11]  'end-kbd-macro)
+(global-set-key [f12]  'call-last-kbd-macro)
+(global-set-key (kbd "C-x a r") 'align-regexp)
+(global-set-key (kbd "M-/") 'hippie-expand)
