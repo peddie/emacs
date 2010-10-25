@@ -4,3 +4,14 @@ auto-save-list/*
 semanticdb/*
 tramp
 ede-projects.el
+site-lisp/auto-complete/
+site-lisp/distel/
+site-lisp/emacs-w3m/
+site-lisp/gccsense/
+site-lisp/haskell-mode/
+site-lisp/mingus/
+site-lisp/predictive/
+site-lisp/redshank/
+site-lisp/rudel/
+site-lisp/undo-tree/
+site-lisp/yasnippet/
