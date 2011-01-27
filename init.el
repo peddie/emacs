@@ -14,8 +14,9 @@
   (add-path "languages") ;; Language-specific configs
   (add-path "site-lisp")) ;; elisp stuff I find on the tubes
 
-;; central Debian site-lisp path
+;; central Debian site-lisp paths
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
+(add-to-list 'load-path "/usr/share/emacs23/site-lisp")
 
 ;;;;;;; basic customizations ;;;;;;;
 
@@ -42,7 +43,8 @@
 (load-library "my-sage")
 (load-library "my-ruby")
 ;(load-library "my-erlang")
-;(load-library "my-ocaml")
+(load-library "my-ocaml")
+(load-library "my-octave")
 ;(load-library "my-gnuplot")
 ;(load-library "my-objc")
 
@@ -62,8 +64,22 @@
 (load-library "my-yasnippet")
 (load-library "my-predictive")
 (load-library "my-lambdas")
+(load-library "my-autocomplete")
+(load-library "my-org")
 
 ;;;;;;;;; frame-specific ;;;;;;;;;;
 
 (add-hook 'server-visit-hook 'new-frame-settings)
 
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(quack-programs (quote ("/usr/local/bin/mit-scheme" "bigloo" "csi" "csi -hygienic" "gsi" "gsi -:d-" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "rs" "scheme" "scheme48" "scmutils"))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )

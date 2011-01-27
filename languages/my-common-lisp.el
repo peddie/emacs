@@ -10,6 +10,7 @@
 (require 'slime)
 
 (setq inferior-lisp-program "sbcl")
+
 (add-to-list 'auto-mode-alist '("\\.lisp$" . lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.cl$" . lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.asd$" . lisp-mode))

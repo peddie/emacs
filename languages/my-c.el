@@ -1,8 +1,8 @@
 ;;;;;;;;;; C ;;;;;;;;;;
 
 (require 'my-flymake)
-; (add-hook 'c-mode-hook 'flymake-mode)
 (require 'my-git)
+; (add-hook 'c-mode-hook 'flymake-mode)
 
 (add-hook 'c-mode-hook
 	  '(lambda ()

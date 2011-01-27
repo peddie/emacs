@@ -12,7 +12,10 @@
 (setq slime-lisp-implementations
    '((sbcl ("/usr/local/bin/sbcl"))
      (abcl ("/usr/local/bin/abcl"))
-     (clojure ("/home/peddie/bin/clojure") :init swank-clojure-init)))
+     (clojure ("/home/peddie/bin/clojure") :init swank-clojure-init)
+     (mit-scheme ("/usr/local/bin/mit-scheme-native") :init mit-scheme-init)
+     (chicken ("csi") :init chicken-slime-init)))
+
 
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit-mode)
 (add-hook 'lisp-mode-hook 'turn-on-paredit-mode)
