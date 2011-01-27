@@ -1,5 +1,5 @@
 *.elc
-backups/*
+/backups
 auto-save-list/*
 semanticdb/*
 tramp
@@ -15,3 +15,5 @@ site-lisp/redshank/
 site-lisp/rudel/
 site-lisp/undo-tree/
 site-lisp/yasnippet/
+/cache
+_darcs
