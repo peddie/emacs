@@ -17,3 +17,4 @@ site-lisp/undo-tree/
 site-lisp/yasnippet/
 /cache
 _darcs
+/ac-comphist.dat
