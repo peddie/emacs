@@ -1,0 +1,1 @@
+/home/peddie/software/qilang/qi-mode.el
