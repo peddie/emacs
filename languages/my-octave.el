@@ -1,5 +1,6 @@
 ;;;;;;;;;;;; octave ;;;;;;;;;;
 
+(add-to-list 'load-path "/home/peddie/.emacs.d/site-lisp/octave")
 (require 'octave-mod)
 
 (setq auto-mode-alist
