@@ -6,7 +6,7 @@
 
 (defun fontify-frame (frame)
 ; (set-frame-parameter frame 'font "DejaVu Sans Mono-11:weight=book")
-  (set-frame-parameter frame 'font "Monospace-11"))
+  (set-frame-parameter frame 'font "Monospace-12"))
 
 
 ;; X fonts now
@@ -17,6 +17,6 @@
 		(fontify-frame nil)
 	      ;; Fontify any future frames
 	      (push 'fontify-frame after-make-frame-functions)
-	      (set-frame-font "DejaVu Sans Mono-11:weight=book")
+	      (set-frame-font "DejaVu Sans Mono-12:weight=book")
 	      (set-fontset-font (frame-parameter nil 'font)
 				'han '("cwTeXHeiBold" . "unicode-bmp")))))
