@@ -5,14 +5,18 @@
 ;; Main multi-scheme mode (quack)
 ; (autoload 'quack "quack" "scheme editing mode" t) 
 (require 'quack)
+(require 'cmuscheme)
 
 (set-variable 'scheme-program-name "mit-scheme")
 (setq auto-mode-alist
-      (append '(("\\.scm$" . quack)
-		("\\.ss$" . quack)
-                ("\\.sch$" . quack)
-                ("\\.scme$" . quack))
+      (append '(("\\.scm$" . scheme-mode)
+		("\\.ss$" . scheme-mode)
+                ("\\.sch$" . scheme-mode)
+                ("\\.scme$" . scheme-mode))
               auto-mode-alist))
+
+(add-hook 'scheme-mode-hook (lambda ()
+			       (slime-mode t)))
 
 ;; Bigloo
 (add-to-list 'load-path "/usr/share/emacs23/site-lisp/bigloo")
@@ -57,6 +61,23 @@
 (add-to-list 'load-path "/home/peddie/software/lisp/swank-chicken")
 (add-hook 'slime-load-hook (lambda () (require 'slime-scheme)))
 (require 'chicken-slime)
+(setq swank-chicken-path "/home/peddie/software/lisp/swank-chicken/swank-chicken.scm")
+
+(defun chicken-doc (&optional obtain-function)
+  (interactive)
+  (let ((func (funcall (or obtain-function 'current-word))))
+    (when func
+      (process-send-string (scheme-proc)
+                           (format "(require-library chicken-doc) ,doc %S\n" func))
+      (save-selected-window
+        (select-window (display-buffer (get-buffer scheme-buffer) t))
+        (goto-char (point-max))))))
+  
+(eval-after-load 'cmuscheme
+ '(define-key scheme-mode-map "\C-cd" 'chicken-doc))
+
+(eval-after-load 'scheme
+ '(define-key scheme-mode-map "\C-cd" 'chicken-doc))
 
 (defun mit-scheme-init (file encoding)
   (format "%S\n\n"

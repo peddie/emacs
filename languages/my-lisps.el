@@ -1,14 +1,5 @@
 ;;;;;;;;;; shared configuration for s-exp languages ;;;;;;;;
 
-;; various lisps
-(defun turn-on-paredit-mode ()
- (paredit-mode +1))
-
-; I didn't like C-j being overridden, I want it to still work the old way in lisp-interaction
-(eval-after-load "paredit"
- '(progn
-    (define-key paredit-mode-map (read-kbd-macro "C-j") nil)))
-
 (setq slime-lisp-implementations
    '((sbcl ("/usr/local/bin/sbcl"))
      (abcl ("/usr/local/bin/abcl"))
@@ -32,6 +23,15 @@
 (require 'electric-dot-and-dash)
 (global-set-key "h" 'electric-dot-and-dash-dot)
 (global-set-key "j" 'electric-dot-and-dash-dash)
+
+;; various lisps
+(defun turn-on-paredit-mode ()
+ (paredit-mode +1))
+
+; I didn't like C-j being overridden, I want it to still work the old way in lisp-interaction
+(eval-after-load "paredit"
+ '(progn
+    (define-key paredit-mode-map (read-kbd-macro "C-j") nil)))
 
 (provide 'my-lisps)
 

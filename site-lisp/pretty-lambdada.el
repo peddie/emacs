@@ -106,7 +106,7 @@
     :group 'convenience :group 'programming)
 
 (defcustom pretty-lambda-auto-modes
-  '(lisp-mode emacs-lisp-mode lisp-interaction-mode scheme-mode haskell-mode literate-haskell-mode tuareg-mode erlang-mode)
+  '(lisp-mode emacs-lisp-mode lisp-interaction-mode scheme-mode haskell-mode literate-haskell-mode tuareg-mode erlang-mode slime-mode redshank-mode slime-editing-mode xscheme-mode)
   "*Modes affected by `pretty-lambda-for-modes'."
   :type '(repeat symbol) :group 'pretty-lambda)
 
