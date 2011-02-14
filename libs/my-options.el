@@ -19,12 +19,14 @@
   scroll-down-aggressively 0             ;; ... annoying
   scroll-preserve-screen-position t)     ;; preserve screen pos with C-v/M-v 
 
-; this is for dark environments
-(set-background-color "black")
-(set-foreground-color "grey80")
 ; this is for light environments
 (set-background-color "grey85")
 (set-foreground-color "grey7")
+(set-cursor-color "white")
+; this is for dark environments
+(set-background-color "black")
+(set-foreground-color "grey90")
+(set-cursor-color "white")
 
 (setq focus-follows-mouse t)
 (setq set-mark-command-repeat-pop t)
