@@ -1,0 +1,3 @@
+[submodule "site-lisp/Drela-mode"]
+	path = site-lisp/Drela-mode
+	url = git://github.com/cloudchamber/Drela-mode.git
