@@ -1,0 +1,1 @@
+/home/peddie/software/gambit/misc/gambit.el
