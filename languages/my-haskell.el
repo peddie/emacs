@@ -1,9 +1,8 @@
 ;;;;;;; haskell setup ;;;;;;;;
 
 ;; Haskell
-; (add-to-list 'load-path "/home/peddie/.emacs.d/site-lisp/haskell-mode")
-(add-to-list 'load-path "/home/peddie/software/haskell/haskellmode-emacs")
-(add-to-list 'load-path "/home/peddie/software/haskell/ghc-mod/elisp")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/haskell-mode")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/ghc-mod/elisp")
 (autoload 'inf-haskell "inf-haskell" "inferior haskell process")
 
 (require 'haskell-mode)
