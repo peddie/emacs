@@ -7,7 +7,6 @@
      (mit-scheme ("/usr/local/bin/mit-scheme-native") :init mit-scheme-init)
      (chicken ("csi") :init chicken-slime-init)))
 
-
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit-mode)
 (add-hook 'lisp-mode-hook 'turn-on-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-paredit-mode)

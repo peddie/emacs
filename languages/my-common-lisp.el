@@ -21,7 +21,7 @@
 (setq slime-backend "/home/peddie/software/lisp/slime/swank-loader.lisp")
 (eval-after-load "slime"
  '(progn
-    (setq common-lisp-hyperspec-root "file:///usr/share/doc/hyperspec")
+    (setq common-lisp-hyperspec-root "file:///usr/share/doc/hyperspec/")
     (setq common-lisp-hyperspec-symbol-table "/usr/share/doc/hyperspec/Data/Map_Sym.txt")
     (setq slime-multiprocessing t)
     (define-key slime-mode-map (kbd "TAB") 'slime-indent-and-complete-symbol)
