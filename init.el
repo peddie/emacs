@@ -36,6 +36,7 @@
 (load-library "my-c++")
 (load-library "my-scheme")
 (load-library "my-clojure")
+(load-library "my-latex")
 (load-library "my-python")
 (load-library "my-maxima")
 ;(load-library "my-matlab")
