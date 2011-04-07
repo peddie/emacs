@@ -4,6 +4,10 @@
 ;(set-default-font "-bitstream-bitstream vera serif-medium-r-normal--17-120-100-100-p-0-iso8859-1")
 ;(set-default-font "-adobe-courier-medium-r-normal--14-140-75-75-m-90-iso8859-1")
 
+(set-default-font "Deja Vu Sans Mono-12")
+(set-fontset-font (frame-parameter nil 'font)
+		  'han '("cwTeXHeiBold" . "unicode-bmp"))
+
 (defun fontify-frame (frame)
 ; (set-frame-parameter frame 'font "DejaVu Sans Mono-11:weight=book")
   (set-frame-parameter frame 'font "Monospace-12"))
@@ -17,6 +21,4 @@
 		(fontify-frame nil)
 	      ;; Fontify any future frames
 	      (push 'fontify-frame after-make-frame-functions)
-	      (set-frame-font "DejaVu Sans Mono-12:weight=book")
-	      (set-fontset-font (frame-parameter nil 'font)
-				'han '("cwTeXHeiBold" . "unicode-bmp")))))
+	      (set-frame-font "Deja Vu Sans Mono-12:weight=book"))))
