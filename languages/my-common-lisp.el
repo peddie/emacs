@@ -67,7 +67,5 @@
 ;;;; Redshank for common lisp ;;;;
 (require 'redshank-loader)
 (eval-after-load "redshank-loader"
-  `(redshank-setup '(lisp-mode-hook
-		     lisp-interaction-mode-hook
-		     slime-repl-mode-hook) t))
+  `(redshank-setup '(lisp-mode-hook) t))
 

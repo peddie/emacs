@@ -11,13 +11,13 @@
 (add-hook 'lisp-mode-hook 'turn-on-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-paredit-mode)
 (add-hook 'scheme-mode-hook 'turn-on-paredit-mode)
-(add-hook 'clojure-mode-hook 'turn-on-paredit-mode)
+; (add-hook 'clojure-mode-hook 'turn-on-paredit-mode)
 
 (add-hook 'emacs-lisp-mode-hook '(lambda () (show-paren-mode t)))
 (add-hook 'lisp-mode-hook '(lambda () (show-paren-mode t)))
 (add-hook 'lisp-interaction-mode-hook '(lambda () (show-paren-mode t)))
 (add-hook 'scheme-mode-hook '(lambda () (show-paren-mode t)))
-(add-hook 'clojure-mode-hook '(lambda () (show-paren-mode t)))
+; (add-hook 'clojure-mode-hook '(lambda () (show-paren-mode t)))
 
 (require 'electric-dot-and-dash)
 (global-set-key "h" 'electric-dot-and-dash-dot)
