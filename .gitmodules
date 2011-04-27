@@ -10,3 +10,6 @@
 [submodule "site-lisp/ghc-mod"]
 	path = site-lisp/ghc-mod
 	url = git://github.com/kazu-yamamoto/ghc-mod.git
+[submodule "site-lisp/mmm-mode"]
+	path = site-lisp/mmm-mode
+	url = git://github.com/purcell/mmm-mode.git
