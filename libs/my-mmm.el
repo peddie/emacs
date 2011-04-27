@@ -1,6 +1,6 @@
 ;;;;; multiple major modes ;;;;;;
 
-(add-to-list 'load-path "/usr/share/emacs23/site-lisp/mmm-mode")
+(add-to-list 'load-path "/home/peddie/.emacs.d/site-lisp/mmm-mode")
 (autoload 'mmm-mode "mmm-mode" "multiple major modes for emacs")
 
 
