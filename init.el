@@ -39,16 +39,11 @@
 (load-library "my-latex")
 (load-library "my-python")
 (load-library "my-maxima")
-;(load-library "my-matlab")
-;(load-library "my-scilab")
 (load-library "my-sage")
 (load-library "my-clojure")
 (load-library "my-ruby")
-;(load-library "my-erlang")
 (load-library "my-ocaml")
 (load-library "my-octave")
-;(load-library "my-gnuplot")
-;(load-library "my-objc")
 
 ;;;;;;;; applications ;;;;;;;;
 (load-library "my-browser")
@@ -63,7 +58,6 @@
 (load-library "my-flymake")
 (load-library "my-cscope")
 (load-library "my-git")
-(load-library "my-yasnippet")
 (load-library "my-predictive")
 (load-library "my-lambdas")
 (load-library "my-autocomplete")
@@ -80,9 +74,11 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(quack-programs (quote ("mit-scheme-native" "bigloo" "csi" "csi -hygienic" "gsi" "gsi -:d-" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "rs" "scheme" "scheme48" "scmutils"))))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+
+;(load-library "my-gnuplot")
+;(load-library "my-objc")
+;(load-library "my-erlang")
+;(load-library "my-matlab")
+;(load-library "my-scilab")
+
+;(load-library "my-yasnippet")
