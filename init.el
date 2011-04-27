@@ -30,6 +30,7 @@
 
 (load-library "my-lisps")
 (load-library "my-common-lisp")
+(load-library "my-qi")
 (load-library "my-haskell")
 (load-library "my-agda")
 (load-library "my-c")

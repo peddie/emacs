@@ -4,6 +4,7 @@
    '((sbcl ("/usr/local/bin/sbcl"))
      (abcl ("/usr/local/bin/abcl"))
      (clojure ("/home/peddie/bin/clojure") :init swank-clojure-init)
+     (qi ("/home/peddie/bin/qi") :init qi-init-cmd)
      (mit-scheme ("/usr/local/bin/mit-scheme-native") :init mit-scheme-init)
      (chicken ("csi") :init chicken-slime-init)))
 
