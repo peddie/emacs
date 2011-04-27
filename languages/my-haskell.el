@@ -6,6 +6,7 @@
 (autoload 'inf-haskell "inf-haskell" "inferior haskell process")
 
 (require 'haskell-mode)
+(require 'haskell-indent)
 (require 'inf-haskell)
 (require 'my-flymake)
 
@@ -34,7 +35,10 @@
   (define-key mode-map (kbd "C-c C-.") 'haskell-indent-align-guards-and-rhs)
   ;; run a hayoo search
   (define-key mode-map (kbd "C-c C-s") 'rgr/hayoo)
-  (define-key mode-map (kbd "C-c C-w") 'haskell-indent-insert-where))
+  (define-key mode-map (kbd "C-c C-w") 'haskell-indent-insert-where)
+  (define-key mode-map (kbd "C-c C-f") 'ghc-flymake-toggle-command)
+  (define-key mode-map (kbd "C-c C-c") 'comment-region)
+  (define-key mode-map (kbd "C-c C-u") 'uncomment-region))
 
 (haskell-keys-setup haskell-mode-map)
 (haskell-keys-setup literate-haskell-mode-map)
@@ -45,19 +49,7 @@
   (if (not (null buffer-file-name)) 
       (flymake-mode)))
 
-(add-hook 'haskell-mode-hook 'turn-on-haskell-ghci)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'haskell-init-hook)
-
-(add-hook 'literate-haskell-mode-hook 'turn-on-haskell-ghci)
-(add-hook 'literate-haskell-mode-hook 'turn-on-haskell-indent)
-(add-hook 'literate-haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'literate-haskell-mode-hook 'haskell-init-hook)
-
 (setq haskell-program-name "ghci")
-
-(add-hook 'haskell-mode-hook 'my-mmm-mode)
 
 (mmm-add-classes
 '((literate-haskell-bird
@@ -74,3 +66,18 @@
   :include-back nil
   :back-offset (beginning-of-line -1)
   )))
+
+(add-hook 'literate-haskell-mode-hook 'my-mmm-mode)
+
+
+(add-hook 'haskell-mode-hook 'haskell-init-hook)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-ghci)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+
+(add-hook 'literate-haskell-mode-hook 'haskell-init-hook)
+(add-hook 'literate-haskell-mode-hook 'turn-on-haskell-ghci)
+(add-hook 'literate-haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'literate-haskell-mode-hook 'turn-on-haskell-doc-mode)
+
+
