@@ -54,6 +54,12 @@
 (load-library "my-ocaml")
 (load-library "my-octave")
 
+;(load-library "my-gnuplot")
+;(load-library "my-objc")
+;(load-library "my-erlang")
+;(load-library "my-matlab")
+;(load-library "my-scilab")
+
 ;;;;;;;; applications ;;;;;;;;
 (load-library "my-browser")
 (load-library "my-jabber")
@@ -74,21 +80,9 @@
 (load-library "my-org")
 (load-library "my-drela")
 
+;(load-library "my-yasnippet")
+
 ;;;;;;;;; frame-specific ;;;;;;;;;;
 
 (add-hook 'server-visit-hook 'new-frame-settings)
 
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(quack-programs (quote ("mit-scheme-native" "bigloo" "csi" "csi -hygienic" "gsi" "gsi -:d-" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "rs" "scheme" "scheme48" "scmutils"))))
-
-;(load-library "my-gnuplot")
-;(load-library "my-objc")
-;(load-library "my-erlang")
-;(load-library "my-matlab")
-;(load-library "my-scilab")
-
-;(load-library "my-yasnippet")

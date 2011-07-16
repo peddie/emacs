@@ -15,6 +15,22 @@
                 ("\\.scme$" . scheme-mode))
               auto-mode-alist))
 
+(setq quack-programs 
+      '("mit-scheme-native" 
+	"bigloo" 
+	"csi" 
+	"csi -hygienic" 
+	"gsi" 
+	"gsi -:d-" 
+	"gsi ~~/syntax-case.scm -" 
+	"guile" 
+	"kawa" 
+	"mit-scheme" 
+	"rs" 
+	"scheme" 
+	"scheme48" 
+	"scmutils"))
+
 (add-hook 'scheme-mode-hook (lambda ()
 			       (slime-mode t)))
 
