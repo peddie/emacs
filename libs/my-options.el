@@ -1,4 +1,6 @@
 ;;;;;;;; general options ;;;;;;;
+(local-path "site-lisp/solarized")
+(require 'color-theme-solarized)
 
 (global-font-lock-mode 1)
 (menu-bar-mode 0)
@@ -24,9 +26,19 @@
 ;; (set-foreground-color "grey90")
 ;; (set-cursor-color "white")
 ; this is for light environments
-(set-background-color "grey85")
-(set-foreground-color "grey7")
-(set-cursor-color "white")
+;;       '((cursor-color . "grey3") 
+;; 	(background-color . "grey85") 
+;; 	(foreground-color . "grey7") 
+
+(color-theme-solarized-light)
+(setq solarized-termcolors 256)
+(setq solarized-contrast 'normal)
+
+(setq default-frame-alist
+ 	'((frame-title-format . "emacs - %b")))
+
+(add-hook 'window-setup-hook
+	  '(lambda () (color-theme-solarized-light)))
 
 (setq focus-follows-mouse t)
 (setq set-mark-command-repeat-pop t)
