@@ -17,5 +17,5 @@ coding-system)))))
 (defun qi ()
   (interactive)
   ;; the below should be the path to your command (script) to start Qi
-  (slime-start :program "/home/peddie/bin/qi"
+  (slime-start :program (concat my-bin "qi") 
                :init 'qi-init-cmd ))

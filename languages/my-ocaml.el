@@ -1,6 +1,6 @@
 ;;;;;;;;;;;;; OCaml ;;;;;;;;
 
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/tuareg-mode")
+(site-lisp-path "tuareg-mode")
 ; (add-to-list 'load-path "/usr/share/emacs/site-lisp/ocaml-mode")
 (require 'tuareg)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)

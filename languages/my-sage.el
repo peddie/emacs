@@ -1,8 +1,8 @@
 ;;;;;;;;; SAGE mathematics ;;;;;;;;
 
-(add-to-list 'load-path (expand-file-name "/home/peddie/software/sage/data/emacs"))
+(add-to-list 'load-path (expand-file-name (concat my-home "software/sage/data/emacs")))
 (require 'sage "sage")
-(setq sage-command "/usr/local/bin/sage")
+(setq sage-command (concat local-bin "sage"))
 
 ;; If you want sage-view to typeset all your output and have plot()
 ;; commands inline, uncomment the following line and configure sage-view:

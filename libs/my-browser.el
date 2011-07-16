@@ -2,7 +2,7 @@
 
 ;; this is mostly for SLIME so it can get the hyperspec
 
-(add-to-list 'load-path "/home/peddie/.emacs.d/site-lisp/emacs-w3m")
+(local-path "site-lisp/emacs-w3m")
 
 (require 'w3m-ems)
 (require 'w3m)

@@ -1,12 +1,16 @@
-;;;;;;;;;; shared configuration for s-exp languages ;;;;;;;;
+;;;;;;;;;; shared configuration for s-exp languages, including slime ;;;;;;;;
+
+(defconst my-common-lisp (concat my-home "software/lisp/"))
+(defun add-lisp (p)
+  (add-to-list 'load-path (concat my-common-lisp p)))
 
 (setq slime-lisp-implementations
-   '((sbcl ("/usr/local/bin/sbcl"))
-     (abcl ("/usr/local/bin/abcl"))
-     (clojure ("/home/peddie/bin/clojure") :init swank-clojure-init)
-     (qi ("/home/peddie/bin/qi") :init qi-init-cmd)
-     (mit-scheme ("/usr/local/bin/mit-scheme-native") :init mit-scheme-init)
-     (chicken ("csi") :init chicken-slime-init)))
+   `((sbcl (,(concat local-bin "sbcl")))
+     (abcl (,(concat local-bin "abcl")))
+     (clojure (,(concat my-bin "clojure")) :init swank-clojure-init)
+     (qi (,(concat my-bin "qi")) :init qi-init-cmd)
+     (mit-scheme (,(concat local-bin "mit-scheme-native")) :init mit-scheme-init)
+     (chicken (,(concat local-bin "csi")) :init chicken-slime-init)))
 
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit-mode)
 (add-hook 'lisp-mode-hook 'turn-on-paredit-mode)

@@ -1,8 +1,8 @@
 ;;;;;;;; python setup ;;;;;;;;;;;
 
 ;; Python
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/pymacs")
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/python-mode")
+(site-lisp-path "pymacs")
+(site-lisp-path "python-mode")
 (setq auto-mode-alist
       (cons '("\\.py$" . python-mode) auto-mode-alist))
 (setq interpreter-mode-alist

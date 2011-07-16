@@ -19,9 +19,9 @@
 			       (slime-mode t)))
 
 ;; Bigloo
-(add-to-list 'load-path "/usr/share/emacs23/site-lisp/bigloo")
-(add-to-list 'load-path "site-lisp/bmacs/bee")
-(add-to-list 'load-path "site-lisp/bmacs")
+(site-lisp-path "bigloo")
+(local-path "site-lisp/bmacs/bee")
+(local-path "site-lisp/bmacs")
 ; (require 'bee-mode)
 ; (require 'bee-bdb)
 ; (autoload 'bee-mode "bee-mode" "bee mode" t)
@@ -47,7 +47,7 @@
               auto-mode-alist))
 
 ;; scheme48
-(add-to-list 'load-path "site-lisp/slime48")
+(local-path "site-lisp/slime48")
 ; (require 'slime48)
 
 
@@ -57,11 +57,11 @@
 
 ;; slime for scheme -- maximum win!
 (require 'slime-scheme)
-(add-to-list 'load-path "site-lisp/slime48")
-(add-to-list 'load-path "/home/peddie/software/lisp/swank-chicken")
+(local-path "site-lisp/slime48")
+(add-lisp "swank-chicken")
 (add-hook 'slime-load-hook (lambda () (require 'slime-scheme)))
 (require 'chicken-slime)
-(setq swank-chicken-path "/home/peddie/software/lisp/swank-chicken/swank-chicken.scm")
+(setq swank-chicken-path (concat my-common-lisp "swank-chicken/swank-chicken.scm"))
 
 (defun chicken-doc (&optional obtain-function)
   (interactive)
@@ -93,7 +93,7 @@
 	    ;; 	    "../contrib/swank-mit-scheme.scm" ; <-- insert your path
 	    ;; 	    slime-path)
 	    ;; 	  (->environment '(swank)))
-	    (load "/home/peddie/software/lisp/slime/contrib/swank-mit-scheme.scm"
+	    (load (concat my-common-lisp "slime/contrib/swank-mit-scheme.scm")
 		  (->environment '(swank)))
 	    (eval '(start-swank ,file) (->environment '(swank))))))
 

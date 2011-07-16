@@ -1,10 +1,10 @@
 ;;;;;;;;;;;; octave ;;;;;;;;;;
 
-(add-to-list 'load-path "/home/peddie/.emacs.d/site-lisp/octave")
+(local-path "site-lisp/octave")
 (require 'octave-mod)
 
-(setq auto-mode-alist
-      (append '(("\\.m$" . octave-mode)) auto-mode-alist))
+;; (setq auto-mode-alist
+;;       (append '(("\\.m$" . octave-mode)) auto-mode-alist))
 
 (add-to-list 'octave-end-keywords "end[[:space:]]*\\([%#].*\\|$\\)")
 (setq octave-block-end-regexp

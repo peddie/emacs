@@ -7,13 +7,13 @@
 (autoload 'git-blame "git-blame" "interface to git-blame" t)
 
 ; egit
-(add-to-list 'load-path "/home/peddie/software/egit")
+(add-to-list 'load-path (concat my-home "software/egit"))
 (autoload 'egit "egit" "Emacs git history" t)
 (autoload 'egit-file "egit" "Emacs git history file" t)
 (autoload 'egit-dir "egit" "Emacs git history directory" t)
 
 ; egg
-(add-to-list 'load-path "/home/peddie/software/egg")
+(add-to-list 'load-path (concat my-home "software/egg"))
 (autoload 'egg "egg" "Enhanced emacs git interface" t)
 (autoload 'egg-grep "egg-grep" "Enhanced emacs git interface -- grep" t)
 

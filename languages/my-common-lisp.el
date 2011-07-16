@@ -3,12 +3,11 @@
 (require 'my-lisps)
 
 ; SLIME
-
-(add-to-list 'load-path "/home/peddie/software/lisp/slime")
-(add-to-list 'load-path "/home/peddie/.emacs.d/site-lisp/redshank")
-(add-to-list 'load-path "/home/peddie/software/lisp/slime/contrib")
+(add-lisp "slime")
+(add-lisp "slime/contrib")
 (require 'slime)
 
+(local-path "site-lisp/redshank")
 (setq inferior-lisp-program "sbcl")
 
 (add-to-list 'auto-mode-alist '("\\.lisp$" . lisp-mode))
@@ -18,7 +17,7 @@
 (slime-setup '(slime-fancy slime-asdf slime-fuzzy slime-tramp slime-presentations))
 ; slime-fuzzy slows everything down
 
-(setq slime-backend "/home/peddie/software/lisp/slime/swank-loader.lisp")
+(setq slime-backend (concat my-common-lisp "slime/swank-loader.lisp"))
 (eval-after-load "slime"
  '(progn
     (setq common-lisp-hyperspec-root "file:///usr/share/doc/hyperspec/")
@@ -52,8 +51,8 @@
 ; (pair-mode t)
 
 ;; femlisp (Finite Element Method for Common Lisp)
-(setq *femlisp-root* "/home/peddie/software/lisp/femlisp/")
-(add-to-list 'load-path "/home/peddie/software/lisp/femlisp/elisp")
+(setq *femlisp-root* (concat my-common-lisp "femlisp/"))
+(add-lisp "femlisp/elisp")
 (autoload 'femlisp "femlisp" "finite-element calculations in common lisp")
 
      ;;; for showing the SLIME buffer if it is hidden

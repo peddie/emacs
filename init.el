@@ -1,22 +1,31 @@
 ;;; .emacs
-(defvar emacs-root "/home/peddie/.emacs.d/"
- "My home directory — the root of my personal emacs load-path.")
+
+;;; path setup
+(defconst my-home "/home/peddie/")
+(defconst my-bin (concat my-home "bin/"))
+(defconst local-bin "/usr/local/bin/")
+(defconst emacs-root (concat my-home ".emacs.d/"))
+(defconst emacs-site-lisp "/usr/share/emacs/site-lisp/")
 
 (let ((default-directory emacs-root))
   (setq load-path (cons emacs-root load-path))
   (normal-top-level-add-subdirs-to-load-path))
 
 ;; ;; add all the elisp directories under ~/.emacs.d to my load path
-(labels ((add-path (p)
- 	 (add-to-list 'load-path
- 			(concat emacs-root p))))
-  (add-path "libs") ;; Personal elisp setup stuff
-  (add-path "languages") ;; Language-specific configs
-  (add-path "site-lisp")) ;; elisp stuff I find on the tubes
+(defun local-path (p) 
+  (add-to-list 'load-path (concat emacs-root p)))
+(defun site-lisp-path (p) 
+  (add-to-list 'load-path (concat emacs-site-lisp p)))
+
+(local-path "libs") ;; Personal elisp setup stuff
+(local-path "languages") ;; Language-specific configs
+(local-path "site-lisp") ;; elisp stuff I find on the tubes
 
 ;; central Debian site-lisp paths
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 (add-to-list 'load-path "/usr/share/emacs23/site-lisp")
+
+(setq warning-suppress-types nil) 
 
 ;;;;;;; basic customizations ;;;;;;;
 
@@ -49,6 +58,7 @@
 (load-library "my-browser")
 (load-library "my-jabber")
 (load-library "my-mail")
+(load-library "my-gnus")
 
 ;;;;;;; handy tools ;;;;;;;;
 

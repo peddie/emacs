@@ -2,14 +2,14 @@
 
 (require 'my-lisps)
 
-
-(add-to-list 'load-path "/home/peddie/software/clojure/clojure-mode")
+(defvar my-clojure (concat my-home "software/clojure/"))
+(add-to-list 'load-path (concat my-clojure "clojure-mode"))
 (require 'clojure-mode)
 
-(add-to-list 'load-path "/home/peddie/software/swank-clojure")
+(add-to-list 'load-path (concat my-home "software/swank-clojure"))
 (require 'swank-clojure)
-(setq swank-clojure-jar-path "/home/peddie/software/clojure/clojure.jar")
-(setf swank-clojure-binary "/home/username/bin/clojure")
+(setq swank-clojure-jar-path (concat my-clojure "clojure.jar"))
+(setf swank-clojure-binary (concat my-bin "clojure"))
 
 (setq auto-mode-alist
       (append '(("\\.clj$" . clojure-mode)) auto-mode-alist))
@@ -21,7 +21,6 @@
 (slime-setup '(slime-banner slime-repl slime-fancy slime-scratch slime-editing-commands slime-scratch slime-asdf))
 
 (setf slime-net-coding-system 'utf-8-unix)
-
 
 (defun run-clojure ()
   "Runs clojure lisp REPL"

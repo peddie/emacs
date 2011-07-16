@@ -1,6 +1,6 @@
 ;;;;;;;; tramp setup ;;;;;;;
 
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/tramp/")
+(site-lisp-path "tramp/")
 (autoload 'tramp "tramp")
 ;; (setq tramp-default-method "scp")
 ;; (setq tramp-default-user "matthew")

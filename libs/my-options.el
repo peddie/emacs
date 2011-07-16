@@ -55,7 +55,7 @@
 ;;; backup files
 (setq make-backup-files t)
 (setq version-control t)
-(setq backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
+(setq backup-directory-alist `((".*" . ,(concat emacs-root "backups/"))))
 (size-indication-mode)
 
 (provide 'my-options)

@@ -3,9 +3,8 @@
 ;; mostly from http://www.djcbsoftware.nl/dot-emacs.html
 
 (require 'ido) 
-(ido-mode 'both) ;; for buffers and files
 (setq 
- ido-save-directory-list-file "~/.emacs.d/cache/ido.last"
+ ido-save-directory-list-file (concat emacs-root "cache/ido.last")
  ido-ignore-buffers ;; ignore these guys
  '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido" "^\*trace"
    "^\*compilation" "^\*GTAGS" "^session\.*" "^\*")
@@ -21,7 +20,7 @@
  ido-confirm-unique-completion t) ; wait for RET, even with unique completion
 
 ;; when using ido, the confirmation is rather annoying...
- (setq confirm-nonexistent-file-or-buffer nil)
+(setq confirm-nonexistent-file-or-buffer nil)
 
 ;; increase minibuffer size when ido completion is active
 (add-hook 'ido-minibuffer-setup-hook 
@@ -29,3 +28,5 @@
     (lambda ()
       (make-local-variable 'resize-minibuffer-window-max-height)
       (setq resize-minibuffer-window-max-height 1))))
+
+(ido-mode 'both) ;; for buffers and files

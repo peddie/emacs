@@ -17,3 +17,5 @@ site-lisp/yasnippet/
 /cache
 _darcs
 /ac-comphist.dat
+backups
+cache

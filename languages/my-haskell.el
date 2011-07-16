@@ -1,8 +1,9 @@
 ;;;;;;; haskell setup ;;;;;;;;
 
 ;; Haskell
-(add-to-list 'load-path "~/.emacs.d/site-lisp/haskell-mode")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/ghc-mod/elisp")
+(defvar my-cabal (concat my-home ".cabal/"))
+(local-path "site-lisp/haskell-mode")
+(local-path "site-lisp/ghc-mod/elisp")
 (autoload 'inf-haskell "inf-haskell" "inferior haskell process")
 
 (require 'haskell-mode)

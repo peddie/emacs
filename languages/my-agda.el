@@ -1,4 +1,4 @@
-(add-to-list 'load-path "/home/peddie/.cabal/share/Agda-2.2.6/emacs-mode/")
+(add-to-list 'load-path (concat my-cabal "share/Agda-2.2.10/emacs-mode/"))
 
 (require 'agda2-mode "agda2-mode.el")
 (unless (assoc "\\.agda" auto-mode-alist)
