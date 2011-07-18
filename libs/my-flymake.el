@@ -1,6 +1,6 @@
 ;;;;;;;;;; flymake mode for compiling on the fly ;;;;;;;;;;;
 
-(add-to-list 'load-path "/usr/share/emacs/23.1/lisp/progmodes/")
+(add-to-list 'load-path "/usr/share/emacs/23.2/lisp/progmodes/")
 
 (require 'flymake)
 (require 'flymake-cursor)
