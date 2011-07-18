@@ -1,0 +1,20 @@
+To get debian packages going, you can run:
+
+  aptitude install `cat ~/.emacs.d/debian-pkgs`
+
+To save the ones you've got:
+
+  aptitude search ~demacs | awk '$1 ~ /i$/ {if ($2 == "A") {print $3} else {print $2}}' > ~/.emacs.d/debian-pkgs.tmp
+
+  for i in "\\-el$" "elisp" "emacs" "auctex"
+  do 
+    aptitude search ~n$i | awk '$1 ~ /i/ {if ($2 == "A") {print $3} else {print $2}}' >> ~/.emacs.d/debian-pkgs.tmp
+  done
+
+  cat ~/.emacs.d/debian-pkgs.tmp | sort -uk1 >> ~/.emacs.d/debian-pkgs
+  
+  rm ~/.emacs.d/debian-pkgs.tmp 
+
+This tries to find all the installed packages that have to do with
+emacs and save them to the debian-pkgs file in a format that dpkg
+--set-selections will be able to read.  
