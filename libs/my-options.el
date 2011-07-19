@@ -15,6 +15,8 @@
     (setq font-lock-maximum-decoration t)
     (fset 'yes-or-no-p 'y-or-n-p)))
 
+(reasonable-settings)
+
 (setq default-frame-alist
  	'((frame-title-format . "emacs - %b")
 	  (menu-bar-mode . 0)

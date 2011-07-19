@@ -16,3 +16,12 @@
 [submodule "site-lisp/solarized"]
 	path = site-lisp/solarized
 	url = git://github.com/sellout/emacs-color-theme-solarized.git
+[submodule "site-lisp/sbcl"]
+	path = site-lisp/sbcl
+	url = git://sbcl.boinkor.net/slime.git
+[submodule "site-lisp/swank-chicken"]
+	path = site-lisp/swank-chicken
+	url = git://github.com/nickg/swank-chicken.git
+[submodule "site-lisp/swank-clojure"]
+	path = site-lisp/swank-clojure
+	url = git://github.com/jochu/swank-clojure.git

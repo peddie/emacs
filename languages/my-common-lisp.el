@@ -3,8 +3,8 @@
 (require 'my-lisps)
 
 ; SLIME
-(add-lisp "slime")
-(add-lisp "slime/contrib")
+(local-path "site-lisp/slime")
+(local-path "site-lisp/slime/contrib")
 (require 'slime)
 
 (local-path "site-lisp/redshank")
@@ -17,7 +17,7 @@
 (slime-setup '(slime-fancy slime-asdf slime-fuzzy slime-tramp slime-presentations))
 ; slime-fuzzy slows everything down
 
-(setq slime-backend (concat my-common-lisp "slime/swank-loader.lisp"))
+(setq slime-backend (concat emacs-root "site-lisp/slime/swank-loader.lisp"))
 (eval-after-load "slime"
  '(progn
     (setq common-lisp-hyperspec-root "file:///usr/share/doc/hyperspec/")
@@ -60,11 +60,10 @@
   (interactive)
   (if (slime-connected-p)
       (slime-display-output-buffer)
-    (slime)))
+    (slime 'sbcl)))
 (global-set-key [f9] 'show-repl-maybe-start-slime)
 
 ;;;; Redshank for common lisp ;;;;
 (require 'redshank-loader)
 (eval-after-load "redshank-loader"
   `(redshank-setup '(lisp-mode-hook) t))
-

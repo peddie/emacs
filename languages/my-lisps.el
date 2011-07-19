@@ -12,6 +12,8 @@
      (mit-scheme (,(concat local-bin "mit-scheme-native")) :init mit-scheme-init)
      (chicken (,(concat local-bin "csi")) :init chicken-slime-init)))
 
+(setq slime-default-lisp 'sbcl)
+
 (add-hook 'emacs-lisp-mode-hook 'turn-on-paredit-mode)
 (add-hook 'lisp-mode-hook 'turn-on-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-paredit-mode)

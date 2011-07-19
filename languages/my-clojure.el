@@ -6,7 +6,7 @@
 (add-to-list 'load-path (concat my-clojure "clojure-mode"))
 (require 'clojure-mode)
 
-(add-to-list 'load-path (concat my-home "software/swank-clojure"))
+(add-to-list 'load-path (concat emacs-root "site-lisp/swank-clojure"))
 (require 'swank-clojure)
 (setq swank-clojure-jar-path (concat my-clojure "clojure.jar"))
 (setf swank-clojure-binary (concat my-bin "clojure"))
