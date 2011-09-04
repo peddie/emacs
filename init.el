@@ -53,6 +53,7 @@
 (load-library "my-ruby")
 (load-library "my-ocaml")
 (load-library "my-octave")
+(load-library "my-scala")
 
 ;(load-library "my-gnuplot")
 ;(load-library "my-objc")

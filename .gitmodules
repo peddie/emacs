@@ -28,3 +28,9 @@
 [submodule "site-lisp/magit"]
 	path = site-lisp/magit
 	url = git://gitorious.org/magit/mainline.git
+[submodule "site-lisp/scala-mode"]
+	path = site-lisp/scala-mode
+	url = git://github.com/haxney/scala-mode.git
+[submodule "site-lisp/ensime"]
+	path = site-lisp/ensime
+	url = git://github.com/aemoncannon/ensime.git
