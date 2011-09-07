@@ -3,6 +3,7 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 (defalias 'qrr 'query-replace-regexp)
+(defalias 'qre 'query-replace-regexp-eval)
 (defalias 'rr 'replace-regexp)
 (defalias 'rs 'replace-string)
 (defalias 'qs 'query-replace)
@@ -34,3 +35,5 @@
 (global-set-key [f12]  'call-last-kbd-macro)
 (global-set-key (kbd "C-x a r") 'align-regexp)
 (global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key [f5] 'my-insert-timeofday)
+(global-set-key (kbd "C-c +") 'my-increment-number-decimal)

@@ -1,5 +1,8 @@
 ;;;;;;; utility functions ;;;;;;;;
 
+;; most of this stuff is just swiped from the emacs wiki or from
+;; random usenet posts.  
+
 (defun unfill-paragraph ()
   (interactive)
   (let ((fill-column (point-max)))
@@ -178,3 +181,87 @@ nil are ignored."
     (insert "\n(defpackage #:" package "\n  (:use #:cl))\n\n")
     (insert "(in-package #:" package ")\n\n")))
 
+ (defun my-insert-timeofday ()
+  "function to insert time of day at point . format: DayOfWeek, Date Month Year	24hrTime"
+  (interactive)
+  (let (localstring mytime)
+	(setq localstring (current-time-string))
+	; example:  Mon, 17 Jun 96  12:52
+	(setq mytime (concat (substring localstring 0 3)  ;day-of-week
+			 ", " 
+			 (substring localstring 8 10) ;day number
+			 " "
+			 (substring localstring 4 7)  ;month 
+			 " "
+			 (substring localstring 22 24 ) ;2-digit year
+			 "  "
+			 (substring localstring 11 16 ) ;24-hr time
+			 "\n"
+			 ))
+	(insert mytime))
+ ) 
+
+
+(defun increment-number-at-point ()
+  (interactive)
+  (skip-chars-backward "0123456789")
+  (or (looking-at "[0123456789]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
+
+(defun my-increment-number-decimal (&optional arg)
+  "Increment the number forward from point by 'arg'."
+  (interactive "p*")
+  (save-excursion
+    (save-match-data
+      (let (inc-by field-width answer)
+        (setq inc-by (if arg arg 1))
+        (skip-chars-backward "0123456789")
+        (when (re-search-forward "[0-9]+" nil t)
+          (setq field-width (- (match-end 0) (match-beginning 0)))
+          (setq answer (+ (string-to-number (match-string 0) 10) inc-by))
+          (when (< answer 0)
+            (setq answer (+ (expt 10 field-width) answer)))
+          (replace-match (format (concat "%0" (int-to-string field-width) "d")
+                                 answer)))))))
+
+(defun my-decrement-number-decimal (&optional arg)
+  (interactive "p*")
+  (my-increment-number-decimal (if arg (- arg) -1)))
+
+
+(defface register-marker-face '((t (:background "grey")))
+  "Used to mark register positions in a buffer."
+  :group 'faces)
+
+(defun set-register (register value)
+  "Set Emacs register named REGISTER to VALUE.  Returns VALUE.
+    See the documentation of `register-alist' for possible VALUE."
+  (let ((aelt (assq register register-alist))
+	(sovl (intern (concat "point-register-overlay-"
+			      (single-key-description register))))
+	)
+    (when (not (boundp sovl))
+      (set sovl (make-overlay (point)(point)))
+      (overlay-put (symbol-value sovl) 'face 'register-marker-face)
+      (overlay-put (symbol-value sovl) 'help-echo
+		   (concat "Register: `"
+			   (single-key-description register) "'")))
+    (delete-overlay (symbol-value sovl))
+    (if (markerp value)
+	;; I'm trying to avoid putting overlay on newline char
+	(if (and (looking-at "$")(not (looking-back "^")))
+	    (move-overlay (symbol-value sovl) (1- value) value)
+	  (move-overlay (symbol-value sovl) value (1+ value))))
+    (if aelt
+	(setcdr aelt value)
+      (push (cons register value) register-alist))
+    value))
+
+(defun dec-to-hex (&optional decnum)
+  (kill-new 
+   (format "%X" 
+	   (string-to-number 
+	    (if decnum 
+		decnum 
+	      (word-at-point))))))
