@@ -28,6 +28,9 @@
 [submodule "site-lisp/magit"]
 	path = site-lisp/magit
 	url = git://gitorious.org/magit/mainline.git
+[submodule "site-lisp/matlab-emacs"]
+	path = site-lisp/matlab-emacs
+	url = git://github.com/ruediger/matlab-emacs.git
 [submodule "site-lisp/scala-mode"]
 	path = site-lisp/scala-mode
 	url = git://github.com/haxney/scala-mode.git
