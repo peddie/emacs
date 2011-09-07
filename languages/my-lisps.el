@@ -26,10 +26,6 @@
 (add-hook 'scheme-mode-hook '(lambda () (show-paren-mode t)))
 ; (add-hook 'clojure-mode-hook '(lambda () (show-paren-mode t)))
 
-(require 'electric-dot-and-dash)
-(global-set-key "h" 'electric-dot-and-dash-dot)
-(global-set-key "j" 'electric-dot-and-dash-dash)
-
 ;; various lisps
 (defun turn-on-paredit-mode ()
  (paredit-mode +1))
