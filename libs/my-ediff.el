@@ -2,8 +2,7 @@
 
 (require 'ediff)
 
-(add-hook 'ediff-before-setup-hook 'new-frame)
-(add-hook 'ediff-quit-hook 'delete-frame)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq ediff-split-window-function 'split-window-vertically)
 
 (provide 'my-ediff)
