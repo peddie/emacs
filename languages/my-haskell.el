@@ -7,7 +7,6 @@
 (autoload 'inf-haskell "inf-haskell" "inferior haskell process")
 
 (require 'haskell-mode)
-(require 'haskell-indent)
 (require 'inf-haskell)
 (require 'my-flymake)
 
@@ -47,6 +46,7 @@
 (defun haskell-init-hook ()
   (ghc-init) 
   (setq haskell-font-lock-symbols 'unicode)
+  (turn-on-haskell-decl-scan)
   (if (not (null buffer-file-name)) 
       (flymake-mode)))
 
