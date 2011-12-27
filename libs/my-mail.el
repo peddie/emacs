@@ -1,9 +1,9 @@
 ;; Mutt
 
-(add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
+;; (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 (autoload 'post-mode "post" "mode for e-mail" t)
 (add-to-list 'auto-mode-alist 
-             '("\\.*mutt-*\\|.article\\|\\.followup" 
+             '("\\[^\.]*mutt-*\\|.article\\|\\.followup" 
 	       . post-mode))
 
 (add-hook 'post-mode-hook 
