@@ -23,7 +23,7 @@
 (defvar my-google-mail-accounts)
 (setq my-google-mail-accounts '("mpeddie@gmail.com" "matt@makanipower.com" "peddie@jobyenergy.com" "matthew@peddies.net" "matt@general-rotors.com" "peddie@general-rotors.com"))
 
-(mapc 'add-gmail-account-to-list my-google-mail-accounts)
+; (mapc 'add-gmail-account-to-list my-google-mail-accounts)
 
 (condition-case nil
     (progn (require ‘w3m nil t)
