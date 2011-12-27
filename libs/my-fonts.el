@@ -5,7 +5,6 @@
 (add-to-list 'default-frame-alist `(font . ,my-font))
 
 (defun fontify-frame (frame)
-; (set-frame-parameter frame 'font "DejaVu Sans Mono-11:weight=book")
   (set-frame-parameter frame 'font my-font))
 
 
