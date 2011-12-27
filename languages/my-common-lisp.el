@@ -67,3 +67,11 @@
 (require 'redshank-loader)
 (eval-after-load "redshank-loader"
   `(redshank-setup '(lisp-mode-hook) t))
+
+(font-lock-add-keywords
+   'lisp-mode
+   `(("[^-]\\(FIXME\\|TODO\\|KLUDGE\\|QUESTION\\|WARNING\\|#[+-]debug\\)"
+1 'font-lock-todo-face t)
+     ("[(:]\\(in-package\\|in-suite\\|not-yet-implemented\\|ignore-errors\\|read-from-string\\|eval\\|production-only.?\\|break[^)]?\\|break/inspect.?\\|break/print.?\\|print\\)[
+        \n()]" 1 'font-lock-todo-face t)
+     ("\\*debug-io\\*\\|\\*trace-output\\*" 0 'font-lock-todo-face t)))
