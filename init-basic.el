@@ -12,6 +12,7 @@
 (defalias 'qr 'query-replace)
 (global-set-key "\M-s" 'isearch-forward-regexp)
 (global-set-key "\M-r" 'isearch-backward-regexp)
+(define-key isearch-mode-map [backspace] 'isearch-delete-char)
 
 (setq make-backup-files t)
 (setq version-control t)
