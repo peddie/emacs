@@ -265,3 +265,7 @@ nil are ignored."
 	    (if decnum 
 		decnum 
 	      (word-at-point))))))
+
+
+(fset 'git-resolve-conflict-mine
+   [?\C-s ?< ?< ?< ?< ?\C-m ?\C-a ?\C-  ?\C-s ?= ?= ?= ?\C-m ?\C-n ?\C-a ?\C-w ?\C-s ?> ?> ?> ?> ?\C-a ?\C-k ?\C-k])
