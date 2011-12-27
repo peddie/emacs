@@ -11,6 +11,7 @@
 (add-hook 'flymake-mode-hook
 	  (lambda ()
 	    (flymake-minor-mode)
+	    (setq flymake-gui-warnings-enabled nil)
 	    (define-key my-flymake-minor-mode-map (kbd "M-n") 'flymake-goto-next-error)
 	    (define-key my-flymake-minor-mode-map (kbd "M-p") 'flymake-goto-prev-error)))
 
