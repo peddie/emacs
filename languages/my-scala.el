@@ -2,7 +2,7 @@
 
 ;; scala
 (local-path "site-lisp/scala-mode")
-(require 'scala-mode-auto)
+(require 'scala-mode)
 
 ;; ENSIME mode
 (local-path "site-lisp/ensime/elisp/")
