@@ -22,7 +22,8 @@
   ; (setq matlab-indent-function t)       ; if you want function bodies indented
   (setq fill-column 80)         ; where auto-fill should wrap
   ; (matlab-mode-hilit)
-  (turn-on-auto-fill))
+  ; (turn-on-auto-fill)
+  )
 (setq matlab-mode-hook 'my-matlab-mode-hook)
 (defun my-matlab-shell-mode-hook ()
   '())

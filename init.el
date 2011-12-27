@@ -54,11 +54,11 @@
 (load-library "my-ocaml")
 (load-library "my-octave")
 (load-library "my-scala")
+(load-library "my-matlab")
 
 ;(load-library "my-gnuplot")
 ;(load-library "my-objc")
 ;(load-library "my-erlang")
-;(load-library "my-matlab")
 ;(load-library "my-scilab")
 
 ;;;;;;;; applications ;;;;;;;;
