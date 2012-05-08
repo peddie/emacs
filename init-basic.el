@@ -102,7 +102,8 @@
  ido-use-url-at-point nil ; don't use url at point (annoying)
  ido-enable-flex-matching t ; don't try to be too smart
  ido-max-prospects 10 ; don't spam my minibuffer
- ido-confirm-unique-completion t) ; wait for RET, even with unique completion
+ ido-confirm-unique-completion t ; wait for RET, even with unique completion
+ ido-ignore-extensions t) ; ignore object files and so on
 (ido-mode 'both) ;; for buffers and files
 
 ;; when using ido, the confirmation is rather annoying...
