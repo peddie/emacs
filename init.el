@@ -81,6 +81,7 @@
 (load-library "my-autocomplete")
 (load-library "my-org")
 (load-library "my-drela")
+(load-library "my-packages")
 
 ;(load-library "my-yasnippet")
 
