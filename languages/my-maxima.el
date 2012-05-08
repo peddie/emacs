@@ -2,7 +2,7 @@
 
 ;;;;; imaxima and imath from http://sites.google.com/site/imaximaimath/download-and-install ;;;;
 
-(push "/usr/local/share/maxima/5.24.0/emacs" load-path)
+(push "/usr/local/share/maxima/5.26.0/emacs" load-path)
 (autoload 'maxima-mode "maxima" "Maxima editing mode" t)
 (autoload 'maxima "maxima" "Running Maxima interactively" t) 
 (autoload 'imaxima "imaxima" "Maxima frontend" t)
