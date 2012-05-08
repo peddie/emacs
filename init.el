@@ -48,7 +48,7 @@
 (load-library "my-latex")
 (load-library "my-python")
 (load-library "my-maxima")
-(load-library "my-sage")
+(ignore-errors (load-library "my-sage"))
 (load-library "my-clojure")
 (load-library "my-ruby")
 (load-library "my-ocaml")

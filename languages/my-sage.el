@@ -1,12 +1,12 @@
 ;;;;;;;;; SAGE mathematics ;;;;;;;;
 
 (add-to-list 'load-path (expand-file-name (concat my-home "software/sage/data/emacs")))
-(require 'sage "sage")
+(require 'sage nil 'noerror)
 (setq sage-command (concat local-bin "sage"))
 
 ;; If you want sage-view to typeset all your output and have plot()
 ;; commands inline, uncomment the following line and configure sage-view:
-(require 'sage-view "sage-view")
+(require 'sage-view nil 'noerror)
 (add-hook 'sage-startup-hook 'sage-view-always 'sage-view-enable-inline-plots 'sage-view-enable-inline-output)
 
 ;; You can use commands like
