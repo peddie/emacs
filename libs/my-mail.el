@@ -12,7 +12,8 @@
     (setq fill-column 72)    ; rfc 1855 for usenet messages
     (require 'footnote-mode) 
     ;     (footmode-mode t)
-    (require 'boxquote)))
+    (require 'boxquote)
+    (end-of-buffer)))
 
 (add-hook 'server-switch-hook 
 	  (lambda ()

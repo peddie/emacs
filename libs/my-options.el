@@ -14,6 +14,13 @@
     (setq mouse-yank-at-point t)
     (setq font-lock-maximum-decoration t)
     (fset 'yes-or-no-p 'y-or-n-p)
+    (setq buffer-file-coding-system 'utf-8)
+    (prefer-coding-system 'utf-8)
+    (setq default-file-name-coding-system 'utf-8)
+    (setq default-keyboard-coding-system 'utf-8)
+    (setq default-process-coding-system '(utf-8 . utf-8))
+    (setq default-sendmail-coding-system 'utf-8)
+    (setq default-terminal-coding-system 'utf-8)
     (defadvice yes-or-no-p (around prevent-dialog activate)
       "Prevent yes-or-no-p from activating a dialog"
       (let ((use-dialog-box nil))

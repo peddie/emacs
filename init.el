@@ -70,12 +70,12 @@
 ;;;;;;; handy tools ;;;;;;;;
 
 (load-library "my-ido")
+(load-library "my-git")
+(load-library "my-flymake")
 (load-library "my-tramp")
 (load-library "my-mmm")
-(load-library "my-flymake")
 (load-library "my-ediff")
 (load-library "my-cscope")
-(load-library "my-git")
 (load-library "my-predictive")
 (load-library "my-lambdas")
 (load-library "my-autocomplete")
