@@ -38,7 +38,7 @@
 	"scheme48" 
 	"scmutils"))
 
-(add-hook 'scheme-mode-hook (lambda () (slime-mode t)))
+; (add-hook 'scheme-mode-hook (lambda () (slime-mode t)))
 
 ;; mechanics/MIT scheme
 ; (autoload 'xscheme "xscheme" "another scheme editing mode" t)
@@ -105,19 +105,19 @@
 ;; ;;                 ("\\.bee$" . bee-mode))
 ;; ;;               auto-mode-alist))
 
-;; ;; gambit!
+;; gambit!
 
-;; ; (autoload 'gambit-inferior-mode "gambit" "Hook Gambit mode into cmuscheme.")
-;; ; (autoload 'gambit-mode "gambit" "Hook Gambit mode into scheme.")
-;; ; (require 'gambit-inferior-mode)
-;; (require 'gambit)
-;; (add-hook 'inferior-scheme-mode-hook (function gambit-inferior-mode))
-;; (add-hook 'scheme-mode-hook (function gambit-mode))
-;; (setq scheme-program-name "gsi -:d-")
-;; (setq auto-mode-alist
-;;       (append '(("\\.gmb$" . gambit-mode)
-;;                 ("\\.gscm$" . gambit-mode))
-;;               auto-mode-alist))
+; (autoload 'gambit-inferior-mode "gambit" "Hook Gambit mode into cmuscheme.")
+; (autoload 'gambit-mode "gambit" "Hook Gambit mode into scheme.")
+; (require 'gambit-inferior-mode)
+(require 'gambit)
+(add-hook 'inferior-scheme-mode-hook (function gambit-inferior-mode))
+(add-hook 'scheme-mode-hook (function gambit-mode))
+(setq scheme-program-name "gsi -:d-")
+(setq auto-mode-alist
+      (append '(("\\.gmb$" . gambit-mode)
+                ("\\.gscm$" . gambit-mode))
+              auto-mode-alist))
 
 ;; ;; scheme48
 ;; (local-path "site-lisp/slime48")

@@ -5,7 +5,7 @@
 (require 'scala-mode)
 
 ;; ENSIME mode
-(local-path "site-lisp/ensime/elisp/")
+(local-path "site-lisp/ensime/src/main/elisp/")
 (require 'ensime)
 
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
