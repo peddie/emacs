@@ -35,3 +35,4 @@ Key bindings:
   nil
   :keymap my-flymake-minor-mode-map)
 
+(provide 'my-flymake-minor-mode)

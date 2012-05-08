@@ -18,9 +18,37 @@
   (concat emacs-root "site-lisp/matlab-mode/matlab.el") 
   "Interactive Matlab mode." t)
 
+(defun flymake-mlint-init ()
+  (flymake-simple-make-init-impl
+   'flymake-create-temp-with-folder-structure nil nil
+   (file-name-nondirectory buffer-file-name)
+   'flymake-get-mlint-cmdline))
+
+(defun flymake-get-mlint-cmdline (source base-dir)
+  (list "~/matlab/bin/glnx86/mlint" (list source)))
+
+(push '(".+\\.m$" flymake-mlint-init flymake-simple-java-cleanup)
+      flymake-allowed-file-name-masks)
+
+(add-to-list 'flymake-err-line-patterns 
+	     '("^L \\([[:digit:]]+\\) (C \\([[:digit:]]+\\)-[[:digit:]]+): \\(.+\\)$"
+	       nil 1 2 3))
+
+;;; emacs assumes that if a value ends in "-function", it's a function
+;;; and could be dangerous if loaded from a local values file.  This
+;;; value just configures indentation settings, so tell emacs not to
+;;; worry.
+(mapc (lambda (x)
+	(add-to-list 'safe-local-variable-values x))
+      '((matlab-indent-function . nil)
+	(matlab-indent-function . true)))
+
 (defun my-matlab-mode-hook ()
-  ; (setq matlab-indent-function t)       ; if you want function bodies indented
-  (setq fill-column 80)         ; where auto-fill should wrap
+  (flymake-mode)
+  (setq matlab-indent-level 2)
+  (setq matlab-indent-function t)       ; if you want function bodies indented
+  (setq matlab-fill-code t)		; fill code with ...
+  (setq matlab-fill-fudge 3)		; flexiblity for filling
   ; (matlab-mode-hilit)
   ; (turn-on-auto-fill)
   )
