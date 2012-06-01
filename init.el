@@ -65,7 +65,7 @@
 (load-library "my-browser")
 (load-library "my-jabber")
 (load-library "my-mail")
-(load-library "my-gnus")
+;; (load-library "my-gnus")
 
 ;;;;;;; handy tools ;;;;;;;;
 
