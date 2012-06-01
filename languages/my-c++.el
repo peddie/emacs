@@ -27,10 +27,10 @@
 
 (add-hook 'c++-mode-hook
 	  '(lambda ()
-             (define-key c-mode-map (kbd "C-c C-l") 'compile)
-             (define-key c-mode-map (kbd "C-;") 'comment-box)
-	     (define-key c-mode-map (kbd "C-c C-f") 'flymake-mode)
-	     (define-key c-mode-map (kbd "C-c m") 'magit-status)
+             (define-key c++-mode-map (kbd "C-c C-l") 'compile)
+             (define-key c++-mode-map (kbd "C-;") 'comment-box)
+	     (define-key c++-mode-map (kbd "C-c C-f") 'flymake-mode)
+	     (define-key c++-mode-map (kbd "C-c m") 'magit-status)
 	     (setq indent-tabs-mode nil)
 	     (setq c-default-style "google")
 	     (google-set-c-style)
