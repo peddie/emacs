@@ -22,11 +22,6 @@
 ;(global-set-key "\M-p" 'mark-paragraph)
 ;(global-set-key "\M-?" 'help-command) 
 
-; perhaps bad ideas?
-(global-set-key "\C-c\C-c" 'comment-region)
-;; (global-set-key "\C-c\C-u" 'uncomment-region)
-;; (global-set-key "\C-x\C-g" 'goto-line)
-
 (global-set-key "\C-c\C-p" 'ps-print-buffer-with-faces)
 ; (global-set-key "\C-xm" 'browse-url-at-point)
 
@@ -38,3 +33,5 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key [f5] 'my-insert-timeofday)
 (global-set-key (kbd "C-c +") 'my-increment-number-decimal)
+(global-set-key (kbd "C-c C-k") 'find-last-closed-file)
+(global-set-key (kbd "C-c C-r") 'reformat-file)

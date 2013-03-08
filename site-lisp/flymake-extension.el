@@ -142,7 +142,7 @@ Default is nil."
 (defun flymake-report-fatal-status (status warning)
   "Display a warning and switch flymake mode off."
   (flymake-extension-show (format "Flymake: %s. Flymake will be switched OFF" warning))
-  (flymake-mode 0))
+  (flymake-mode -1))
 
 (defun flymake-extension-show (&optional msg no-echo)
   "Show error or warning.

@@ -23,38 +23,44 @@
 
 ;; central Debian site-lisp paths
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
-(add-to-list 'load-path "/usr/share/emacs23/site-lisp")
+(let ((default-directory "/usr/local/share/emacs/site-lisp"))
+      (normal-top-level-add-subdirs-to-load-path))
+(add-to-list 'load-path "/usr/share/emacs-snapshot/site-lisp")
+(let ((default-directory "/usr/share/emacs-snapshot/site-lisp"))
+      (normal-top-level-add-subdirs-to-load-path))
 
 (setq warning-suppress-types nil) 
 
 ;;;;;;; basic customizations ;;;;;;;
 
 (load-library "my-utilities")
-(load-library "my-options")
-(load-library "my-fonts")
 (load-library "my-keys")
+(load-library "my-fonts")
 (load-library "my-completion")
+(load-library "my-options")
+(load-library "my-wspace")
 
 ;;;;;; languages ;;;;;;;
 
+(load-library "my-haskell")
+(load-library "my-c")
+(load-library "my-c++")
 (load-library "my-lisps")
 (load-library "my-common-lisp")
 (load-library "my-qi")
-(load-library "my-haskell")
 (load-library "my-agda")
-(load-library "my-c")
-(load-library "my-c++")
 (load-library "my-scheme")
 (load-library "my-latex")
 (load-library "my-python")
 (load-library "my-maxima")
 (ignore-errors (load-library "my-sage"))
-(load-library "my-clojure")
+(ignore-errors (load-library "my-clojure"))
 (load-library "my-ruby")
 (load-library "my-ocaml")
 (load-library "my-octave")
 (load-library "my-scala")
 (load-library "my-matlab")
+(load-library "my-mercury")
 
 ;(load-library "my-gnuplot")
 ;(load-library "my-objc")
@@ -71,7 +77,7 @@
 
 (load-library "my-ido")
 (load-library "my-git")
-(load-library "my-flymake")
+(ignore-errors (load-library "my-flymake"))
 (load-library "my-tramp")
 (load-library "my-mmm")
 (load-library "my-ediff")

@@ -25,7 +25,7 @@
    'flymake-get-mlint-cmdline))
 
 (defun flymake-get-mlint-cmdline (source base-dir)
-  (list "~/matlab/bin/glnx86/mlint" (list source)))
+  (list "~/asscock/bin/glnx86/mlint" (list source)))
 
 (push '(".+\\.m$" flymake-mlint-init flymake-simple-java-cleanup)
       flymake-allowed-file-name-masks)

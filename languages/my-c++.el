@@ -9,21 +9,25 @@
 (add-to-list 'completion-ignored-extensions ".gcda")
 (add-to-list 'completion-ignored-extensions ".d")
 (add-to-list 'completion-ignored-extensions ".oc")
+(add-to-list 'completion-ignored-extensions ".lst")
 
 (require 'google-c-style)
 
-(defun flymake-cpplint-init ()
-  (flymake-simple-make-init-impl
-   'flymake-create-temp-with-folder-structure nil nil
-   (file-name-nondirectory buffer-file-name)
-   'flymake-get-cpplint-cmdline))
+;; (defun flymake-cpplint-init ()
+;;   (flymake-simple-make-init-impl
+;;    'flymake-create-temp-with-folder-structure nil nil
+;;    (file-name-nondirectory buffer-file-name)
+;;    'flymake-get-cpplint-cmdline))
 
-(defun flymake-get-cpplint-cmdline (source base-dir)
-  (list "cpplint"
-	(list source base-dir)))
+;; (defun flymake-get-cpplint-cmdline (source base-dir)
+;;   (list "cpplint"
+;; 	(list source base-dir)))
 
-(push '(".+\\.cpp$" flymake-cpplint-init flymake-simple-java-cleanup)
-      flymake-allowed-file-name-masks)
+;; (push '(".+\\.cpp$" flymake-cpplint-init flymake-simple-java-cleanup)
+;;       flymake-allowed-file-name-masks)
+
+;; (push '(".+\\.cc$" flymake-cpplint-init flymake-simple-java-cleanup)
+;;       flymake-allowed-file-name-masks)
 
 (add-hook 'c++-mode-hook
 	  '(lambda ()

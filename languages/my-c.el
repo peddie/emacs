@@ -9,6 +9,7 @@
 (add-to-list 'completion-ignored-extensions ".gcda")
 (add-to-list 'completion-ignored-extensions ".d")
 (add-to-list 'completion-ignored-extensions ".oc")
+(add-to-list 'completion-ignored-extensions ".lst")
 
 (add-hook 'c-mode-hook
 	  '(lambda ()

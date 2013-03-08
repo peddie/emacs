@@ -110,14 +110,14 @@
 ; (autoload 'gambit-inferior-mode "gambit" "Hook Gambit mode into cmuscheme.")
 ; (autoload 'gambit-mode "gambit" "Hook Gambit mode into scheme.")
 ; (require 'gambit-inferior-mode)
-(require 'gambit)
-(add-hook 'inferior-scheme-mode-hook (function gambit-inferior-mode))
-(add-hook 'scheme-mode-hook (function gambit-mode))
-(setq scheme-program-name "gsi -:d-")
-(setq auto-mode-alist
-      (append '(("\\.gmb$" . gambit-mode)
-                ("\\.gscm$" . gambit-mode))
-              auto-mode-alist))
+;; (autoload 'gambit)
+;; (add-hook 'inferior-scheme-mode-hook (function gambit-inferior-mode))
+;; (add-hook 'scheme-mode-hook (function gambit-mode))
+;; (setq scheme-program-name "gsi -:d-")
+;; (setq auto-mode-alist
+;;       (append '(("\\.gmb$" . gambit-mode)
+;;                 ("\\.gscm$" . gambit-mode))
+;;               auto-mode-alist))
 
 ;; ;; scheme48
 ;; (local-path "site-lisp/slime48")

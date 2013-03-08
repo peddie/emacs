@@ -1,7 +1,4 @@
 ;;;;;;;; general options ;;;;;;;
-(local-path "site-lisp/solarized")
-(require 'color-theme-solarized)
-
 (defun reasonable-settings ()
   (progn
     (global-font-lock-mode 1)
@@ -74,5 +71,8 @@
 (setq version-control t)
 (setq backup-directory-alist `((".*" . ,(concat emacs-root "backups/"))))
 (size-indication-mode)
+
+(local-path "site-lisp/solarized")
+(require 'color-theme-solarized)
 
 (provide 'my-options)

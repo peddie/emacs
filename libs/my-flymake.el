@@ -5,7 +5,7 @@
 (require 'flymake)
 (require 'flymake-cursor)
 (require 'flymake-init)
-(require 'my-flymake-minor-mode)
+(ignore-errors (require 'my-flymake-minor-mode))
 
 ; (add-hook 'find-file-hook 'flymake-find-file-hook)
 

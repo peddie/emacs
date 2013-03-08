@@ -37,3 +37,15 @@
 [submodule "site-lisp/ensime"]
 	path = site-lisp/ensime
 	url = git://github.com/aemoncannon/ensime.git
+[submodule "site-lisp/flymake"]
+	path = site-lisp/flymake
+	url = git://github.com/illusori/emacs-flymake.git
+[submodule "site-lisp/ethan-wspace"]
+	path = site-lisp/ethan-wspace
+	url = git://github.com/glasserc/ethan-wspace.git
+[submodule "site-lisp/multiple-cursors"]
+	path = site-lisp/multiple-cursors
+	url = git://github.com/magnars/multiple-cursors.el.git
+[submodule "site-lisp/mo-git-blame"]
+	path = site-lisp/mo-git-blame
+	url = git://github.com/mbunkus/mo-git-blame.git

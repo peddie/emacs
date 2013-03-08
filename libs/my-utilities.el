@@ -465,10 +465,11 @@ OCTNAME is omitted, the names are assumed to be the same."
 (defalias 'tmc 'test-matrix-copy)
 
 (defun reformat-file ()
+  "Replaces tabs with spaces, removes trailing whitespace, moves C++ comments two spaces away from code and indents according to the current indentation style."
   (interactive)
   (untabify (point-min) (point-max))
   (replace-regexp "^\\([ ]+\\)?\\([^\\(//\\)\n].*[^ \n]\\)?\\([ ]+\\)//\\([ ]+\\)?\\(.*\\)$" "\\2  // \\5" 'nil (point-min) (point-max))
-  (replace-regexp "[ ]+$" "" 'nil (point-min) (point-max))
+  (delete-trailing-whitespace (point-min))
   (indent-region (point-min) (point-max)))
 
 (defun open-code-and-reformat-file ()
@@ -477,4 +478,26 @@ OCTNAME is omitted, the names are assumed to be the same."
   (reformat-file)
   (save-buffer)
   (kill-buffer))
+
+
+
+; from http://stackoverflow.com/questions/2227401/how-to-get-a-list-of-last-closed-files-in-emacs
+
+(defvar closed-files (list))
+
+(defun track-closed-file ()
+  (and buffer-file-name
+       (message buffer-file-name)
+       (or (delete buffer-file-name closed-files) t)
+       (add-to-list 'closed-files buffer-file-name)))
+
+(defun last-closed-files ()
+  (interactive)
+  (find-file (ido-completing-read "Last closed: " closed-files)))
+
+(defun find-last-closed-file ()
+  (interactive)
+  (find-file (car (last-closed-files))))
+
+(add-hook 'kill-buffer-hook 'track-closed-file)
 
