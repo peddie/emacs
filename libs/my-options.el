@@ -13,6 +13,8 @@
     (fset 'yes-or-no-p 'y-or-n-p)
     (setq buffer-file-coding-system 'utf-8)
     (prefer-coding-system 'utf-8)
+    (require 're-builder)
+    (setq reb-re-syntax 'string)
     (setq default-file-name-coding-system 'utf-8)
     (setq default-keyboard-coding-system 'utf-8)
     (setq default-process-coding-system '(utf-8 . utf-8))
