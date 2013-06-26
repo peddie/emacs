@@ -6,7 +6,7 @@
 	url = git://github.com/pheaver/haskell-mode.git
 [submodule "site-lisp/slime"]
 	path = site-lisp/slime
-	url = git://sbcl.boinkor.net/slime.git
+	url = git://github.com/antifuchs/slime.git
 [submodule "site-lisp/ghc-mod"]
 	path = site-lisp/ghc-mod
 	url = git://github.com/kazu-yamamoto/ghc-mod.git
@@ -16,9 +16,6 @@
 [submodule "site-lisp/solarized"]
 	path = site-lisp/solarized
 	url = git://github.com/sellout/emacs-color-theme-solarized.git
-[submodule "site-lisp/sbcl"]
-	path = site-lisp/sbcl
-	url = git://sbcl.boinkor.net/slime.git
 [submodule "site-lisp/swank-chicken"]
 	path = site-lisp/swank-chicken
 	url = git://github.com/nickg/swank-chicken.git
